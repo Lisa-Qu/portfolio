@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jury Deliberation Simulator | Lisha Qu</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    body {
+      background: var(--eerie-black-1);
+      color: var(--light-gray);
+      font-family: 'Poppins', sans-serif;
+      padding: 40px 16px 80px;
+    }
+
+    .detail-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--orange-yellow-crayola);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 32px;
+    }
+
+    .detail-card {
+      display: block;
+      background: var(--eerie-black-2);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow-1);
+      border: 1px solid var(--jet);
+    }
+
+    .detail-meta-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var (--light-gray);
+    }
+
+    .detail-card h1 {
+      margin: 16px 0;
+      color: var(--white-2);
+    }
+
+    .detail-card .lead {
+      font-size: 1.05rem;
+      color: var(--light-gray);
+    }
+
+    .detail-body h2,
+    .detail-body h3 {
+      color: var(--white-2);
+      margin-top: 32px;
+    }
+
+    .detail-body p,
+    .detail-body li {
+      line-height: 1.8;
+      color: var(--light-gray);
+    }
+
+    .detail-body img,
+    iframe {
+      width: 100%;
+      border-radius: 18px;
+      margin: 20px 0;
+      border: 1px solid var(--jet);
+    }
+
+    ul { padding-left: 1.2rem; }
+    li { margin-bottom: 10px; }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--jet);
+      margin: 36px 0;
+    }
+
+    @media (max-width: 640px) {
+      .detail-card { padding: 24px; }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="detail-wrapper">
+    <a class="back-link" href="index.html#portfolio">&larr; Back to Portfolio</a>
+    <article class="detail-card">
+      <header>
+        <p class="detail-meta-line">Capstone • AI Jury • Interactive Simulation</p>
+        <h1>Jury Deliberation Simulator</h1>
+        <p class="lead">An AI-driven environment that explores how autonomous jurors debate, persuade, and reach consensus under conflicting evidence.</p>
+      </header>
+      <div class="detail-body">
+        <p>This project presents a <strong>Jury Deliberation Simulator</strong>, an interactive AI-driven environment designed to study <strong>group reasoning, persuasion, and decision-making</strong> in a courtroom-like setting.<br>
+          Inspired by the dynamics of <em>12 Angry Men</em>, the simulator models how multiple jurors—each represented by an autonomous large language model—debate, form opinions, and eventually reach a verdict.</p>
+        <p>The goal is to explore how different personalities, background knowledge, and reasoning styles interact to influence group consensus and fairness.<br>
+          It can serve as a research tool for studying <strong>multi-agent dialogue</strong>, <strong>argumentation</strong>, and <strong>ethical reasoning</strong> under conflicting evidence.</p>
+        <hr>
+        <h3>Key Features</h3>
+        <ul>
+          <li>🧠 <strong>LLM Agents:</strong> Each juror is powered by a distinct reasoning model with memory and personality.</li>
+          <li>⚖️ <strong>Dynamic Debate:</strong> Simulates persuasion, bias shifts, and majority formation during deliberation.</li>
+          <li>📊 <strong>Behavior Analysis:</strong> Logs conversation flow and verdict progression for visualization and study.</li>
+          <li>🧩 <strong>Research Application:</strong> Useful for studying human-AI interaction and decision-making systems.</li>
+        </ul>
+        <hr>
+        <h3>Demonstration</h3>
+        
+        <p><a href="projects/ai_jury/poster.pdf" target="_blank" rel="noopener">View the poster (PDF)</a></p>
+        <iframe src="projects/ai_jury/poster.pdf" width="100%" height="600"></iframe>
+
+        <p>You can explore the full implementation and experiment results in the Kaggle Notebook here:</p>
+        <p><a href="https://www.kaggle.com/code/weijiahan/capstone-jury-deliberation-simulator/notebook" target="_blank" rel="noopener" class="back-link">Open Kaggle Notebook ↗</a></p>
+        <hr>
+        <p><em>Developed as part of a capstone project combining social simulation and AI reasoning.</em></p>
+      </div>
+    </article>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

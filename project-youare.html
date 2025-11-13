@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouAre iOS App | Lisha Qu</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    body {
+      background: var(--eerie-black-1);
+      color: var(--light-gray);
+      font-family: 'Poppins', sans-serif;
+      padding: 40px 16px 80px;
+    }
+
+    .detail-wrapper { max-width: 900px; margin: 0 auto; }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--orange-yellow-crayola);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 32px;
+    }
+
+    .detail-card {
+      display: block;
+      background: var(--eerie-black-2);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow-1);
+      border: 1px solid var (--jet);
+    }
+
+    .detail-meta-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--light-gray);
+    }
+
+    .detail-card h1 { margin: 16px 0; color: var(--white-2); }
+    .detail-card .lead { font-size: 1.05rem; color: var(--light-gray); }
+
+    .detail-body h2, .detail-body h3 { color: var(--white-2); margin-top: 32px; }
+    .detail-body p, .detail-body li { line-height: 1.8; color: var(--light-gray); }
+    .detail-body img, iframe { width: 100%; border-radius: 18px; margin: 20px 0; border: 1px solid var(--jet); }
+    table { width: 100%; border-collapse: collapse; }
+    td { padding: 12px; vertical-align: top; }
+    hr { border: none; border-top: 1px solid var(--jet); margin: 36px 0; }
+    @media (max-width: 640px) { .detail-card { padding: 24px; } td { display: block; width: 100%; } }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="detail-wrapper">
+    <a class="back-link" href="index.html#portfolio">&larr; Back to Portfolio</a>
+    <article class="detail-card">
+      <header>
+        <p class="detail-meta-line">Swift • SwiftUI • Mobile Wellbeing</p>
+        <h1>YouAre — iOS App for Building Self-Assertion</h1>
+        <p class="lead">Collect daily evidence, celebrate progress, and strengthen confidence one reflection at a time.</p>
+      </header>
+      <div class="detail-body">
+        <h2>🌟 Inspiration</h2>
+        <p>This app is designed to <strong>help people improve self-assertion</strong>.<br>
+        We were inspired by the challenges many face in building confidence and overcoming fear of judgment — which often causes anxiety and self-doubt.</p>
+        <p><strong>YouAre</strong> encourages users to reflect on and collect their daily experiences in a positive, rewarding way, helping them gain clarity, confidence, and resilience against misjudgment.</p>
+        <hr>
+        <h2>💡 What It Does</h2>
+        <p>Users build their confidence by <strong>collecting daily evidence</strong> — small but meaningful experiences that affirm their beliefs and growth.</p>
+        <p>Each belief (like <em>Healthy</em>, <em>Kind</em>, or <em>Creative</em>) is represented by a <strong>colored shape block with an emoji</strong>.<br>
+        Users can tap a block to enter its detail view, see all their evidence entries, and navigate through reflections using swipe gestures.</p>
+        <p>Long-pressing allows adding new blocks or evidence.<br>
+        The app also supports <strong>daily reflections</strong>, letting users choose three key elements of their day and celebrating completion with a <strong>confetti animation</strong> 🎉.</p>
+        <p>If users forget a block’s meaning, they can switch to <strong>dark mode</strong>, where each block displays its emoji for quick recall.</p>
+        <hr>
+        <h2>📖 Story & Education Page</h2>
+        <p>The <em>Story</em> section provides educational and emotional support — covering:</p>
+        <ul>
+          <li><strong>Self-definition and identity</strong></li>
+          <li><strong>Body positivity and beauty diversity</strong></li>
+          <li><strong>Relationships and acceptance</strong></li>
+          <li><strong>LGBTQ+ inclusivity</strong></li>
+          <li><strong>The developer’s personal story</strong></li>
+        </ul>
+        <p>This narrative helps users see that <strong>self-assertion and authenticity</strong> are lifelong practices.</p>
+        
+        <p><img src="projects/ios/images/essence2.png" alt="Essence Page" style="max-width: 160px; margin-left: auto; margin-right: auto;"></p>
+        <p><img src="projects/ios/images/orange.png" alt="Story Page" style="max-width: 160px; margin-left: auto; margin-right: auto;"></p>
+        <hr>
+        <h2>🛠️ How We Built It</h2>
+        <p>Built with <strong>Swift</strong> and <strong>SwiftUI</strong>, the app uses a clean <strong>View-Model architecture</strong> to efficiently manage data and UI updates.<br>
+        We also integrated a <strong>local confetti animation API</strong> for a joyful user experience.</p>
+        <p><img src="projects/ios/images/home.png" alt="Home View" style="max-width: 160px; margin-left: auto; margin-right: auto;"></p>
+        <p><img src="projects/ios/images/add_block.png" alt="Add Block View" style="max-width: 160px; margin-left: auto; margin-right: auto;"></p>
+        <p><img src="projects/ios/images/gallery.png" alt="Add Evidence View" style="max-width: 160px; margin-left: auto; margin-right: auto;"></p>
+        <hr>
+        <h2>⚙️ Challenges We Faced</h2>
+        <p>One of the toughest parts was implementing the <strong>selection tracking system</strong>.<br>
+        Initially, the yellow highlight stroke wasn’t dynamically attached to selected elements.<br>
+        We solved this by introducing:</p>
+        <ul>
+          <li>a <code>selectedBlockID</code> variable, and</li>
+          <li>an <code>isSelected</code> flag bound to UI updates in real time.</li>
+        </ul>
+        <p>This created a responsive and fluid reflection experience.</p>
+        <hr>
+        <h2>🏆 Accomplishments</h2>
+        <p>✅ Built a <strong>smooth daily reflection experience</strong><br>
+        ✅ Added a <strong>confetti celebration</strong> for motivation<br>
+        ✅ Designed a <strong>responsive selection tracking</strong> system<br>
+        ✅ Ensured the app works <strong>fully offline</strong></p>
+        <p><img src="projects/ios/images/contra.png" alt="Celebration Screen"  style="max-width: 160px; margin-left: auto; margin-right: auto;"></p>
+        <hr>
+        <h2>📚 What We Learned</h2>
+        <p>Through this project, we learned how to:</p>
+        <ul>
+          <li>Manage <strong>dynamic UI state</strong> using SwiftUI bindings</li>
+          <li>Implement <strong>real-time selection logic</strong></li>
+          <li>Integrate <strong>animations smoothly</strong></li>
+          <li>Debug complex UI placement issues</li>
+        </ul>
+        <p>We also learned how visual feedback and interaction design can powerfully shape <strong>users’ confidence journeys</strong>.</p>
+        <hr>
+        <h2>🎥 App Demo</h2>
+        <iframe width="640" height="360"
+          src="https://www.youtube.com/embed/AwFMyipYiP4"
+          title="YouAre App Demo — click to open on YouTube if it doesn't load here"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+        <p class="video-note"><small>If the embed doesn’t load, <a href="https://www.youtube.com/watch?v=AwFMyipYiP4" target="_blank" rel="noopener">open the video directly on YouTube</a>.</small></p>
+        <hr>
+        <h3>✨ More Screens</h3>
+        <table>
+          <tbody>
+            <tr>
+              <td><img src="projects/ios/images/essence2.png" alt="Essence" style="max-width: 160px; margin-left: auto; margin-right: auto;"></td>
+              <td><img src="projects/ios/images/gallery1.png" alt="Healthy Page" style="max-width: 160px; margin-left: auto; margin-right: auto;"></td>
+              <td><img src="projects/ios/images/orange.png" alt="Story Page" style="max-width: 180px; margin-left: auto; margin-right: auto;"></td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+        <p><strong>Created with ❤️ using Swift &amp; SwiftUI</strong><br>
+        <em>Empower yourself, one block at a time.</em></p>
+      </div>
+    </article>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

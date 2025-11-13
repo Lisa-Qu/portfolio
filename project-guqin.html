@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nonlinear Guqin Simulation | Lisha Qu</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    body { background: var(--eerie-black-1); color: var(--light-gray); font-family: 'Poppins', sans-serif; padding: 40px 16px 80px; }
+    .detail-wrapper { max-width: 900px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--orange-yellow-crayola); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: 32px; }
+    .detail-card { display: block; background: var(--eerie-black-2); border-radius: 24px; padding: 40px; box-shadow: var(--shadow-1); border: 1px solid var(--jet); }
+    .detail-meta-line { display: flex; flex-wrap: wrap; gap: 10px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--light-gray); }
+    .detail-card h1 { margin: 16px 0; color: var(--white-2); }
+    .detail-body p, .detail-body li { line-height: 1.8; color: var(--light-gray); }
+    .detail-body img { width: 100%; border-radius: 18px; margin: 24px 0; border: 1px solid var(--jet); }
+    ol { padding-left: 1.2rem; }
+    ol li { margin-bottom: 12px; }
+    hr { border: none; border-top: 1px solid var(--jet); margin: 36px 0; }
+    @media (max-width: 640px) { .detail-card { padding: 24px; } }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="detail-wrapper">
+    <a class="back-link" href="index.html#portfolio">&larr; Back to Portfolio</a>
+    <article class="detail-card">
+      <header>
+        <p class="detail-meta-line">String Dynamics • 06/2023 — 09/2023 • DKU</p>
+        <h1>Nonlinear Guqin String Simulation</h1>
+      </header>
+      <div class="detail-body">
+        <p>📆06/2023-09/2023<br>
+        👨‍🏫Research Assistant to Professor Paul Stanley: Associate Dean of Undergraduate Studies<br>
+        📍Kunshan, China</p>
+        <ol>
+          <li>Formulated and solved a nonlinear wave PDE with fourth-order bending stiffness and viscoelastic damping, discretized via finite-difference stencils and integrated using Runge–Kutta (RK4).</li>
+          <li>Built a C + Python hybrid solver with FFT-based spectral analysis and Lyapunov-exponent estimation, quantifying the onset of chaos in plucked-string motion.</li>
+          <li>Verified model correctness through energy-conservation and spectral-stationarity tests, then mapped the stiffness–chaos transition, observing Lyapunov growth consistent with theoretical predictions.</li>
+          <li>Delivered physically interpretable results connecting numerical dynamics and acoustic timbre, informing nonlinear modeling of traditional instruments.</li>
+        </ol>
+        <iframe src="projects/Guqin/images/Tianhui_Liao_SRS_Poster.pdf" width="100%" height="600"></iframe>
+      </div>
+    </article>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

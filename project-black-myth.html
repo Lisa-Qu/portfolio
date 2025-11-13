@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Sentiment Analysis | Lisha Qu</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    body { background: var(--eerie-black-1); color: var(--light-gray); font-family: 'Poppins', sans-serif; padding: 40px 16px 80px; }
+    .detail-wrapper { max-width: 900px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--orange-yellow-crayola); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: 32px; }
+    .detail-card { display: block; background: var(--eerie-black-2); border-radius: 24px; padding: 40px; box-shadow: var(--shadow-1); border: 1px solid var(--jet); }
+    .detail-meta-line { display: flex; flex-wrap: wrap; gap: 10px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--light-gray); }
+    .detail-card h1 { margin: 16px 0; color: var(--white-2); }
+    .detail-card .lead { font-size: 1.05rem; color: var (--light-gray); }
+    .detail-body h2, .detail-body h3 { color: var(--white-2); margin-top: 32px; }
+    .detail-body p, .detail-body li { line-height: 1.8; color: var(--light-gray); }
+    .detail-body img { width: 100%; border-radius: 18px; margin: 24px 0; border: 1px solid var(--jet); }
+    hr { border: none; border-top: 1px solid var(--jet); margin: 36px 0; }
+    @media (max-width: 640px) { .detail-card { padding: 24px; } }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="detail-wrapper">
+    <a class="back-link" href="index.html#portfolio">&larr; Back to Portfolio</a>
+    <article class="detail-card">
+      <header>
+        <p class="detail-meta-line">Data Crawler • Social Media Sentiment</p>
+        <h1>Social Media Sentiment Analysis Project</h1>
+        <p class="lead">End-to-end pipeline that collects, translates, and analyzes Chinese social media posts using English sentiment models.</p>
+      </header>
+      <div class="detail-body">
+        <p>Built a scalable crawler to ingest trending content, applied bilingual normalization, then ran sentiment inference with English transformers on translated corpora. Visualizations highlight distribution shifts in public opinion for the game <em>Black Myth: Wukong</em>.</p>
+        <p><img src="projects/black_myth/images/sentiment_distribution.png" alt="Sentiment distribution" title="Sentiment distribution"></p>
+        <p><img src="projects/black_myth/images/sentiment_table.png" alt="Sentiment statistics" title="Sentiment statistics"></p>
+      </div>
+    </article>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

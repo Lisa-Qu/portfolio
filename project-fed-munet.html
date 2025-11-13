@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fed-MUNet | Lisha Qu</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    body {
+      background: var(--eerie-black-1);
+      color: var(--light-gray);
+      font-family: 'Poppins', sans-serif;
+      padding: 40px 16px 80px;
+    }
+
+    .detail-wrapper { max-width: 900px; margin: 0 auto; }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--orange-yellow-crayola);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 32px;
+    }
+
+    .detail-card {
+      display: block;
+      background: var(--eerie-black-2);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow-1);
+      border: 1px solid var(--jet);
+    }
+
+    .detail-meta-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--light-gray);
+    }
+
+    .detail-card h1 { margin: 16px 0; color: var(--white-2); }
+    .detail-card .lead { font-size: 1.05rem; color: var(--light-gray); }
+    .detail-body h2, .detail-body h3 { color: var(--white-2); margin-top: 32px; }
+    .detail-body p, .detail-body li { line-height: 1.8; color: var(--light-gray); }
+    .detail-body img { width: 100%; border-radius: 18px; margin: 20px 0; border: 1px solid var(--jet); }
+    ul { padding-left: 1.2rem; }
+    li { margin-bottom: 12px; }
+    hr { border: none; border-top: 1px solid var(--jet); margin: 36px 0; }
+    @media (max-width: 640px) { .detail-card { padding: 24px; } }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="detail-wrapper">
+    <a class="back-link" href="index.html#portfolio">&larr; Back to Portfolio</a>
+    <article class="detail-card">
+      <header>
+        <p class="detail-meta-line">Federated Learning • 03/2024–08/2024 • DKU</p>
+        <h1>Fed-MUNet: Privacy-Preserving Multi-Modal MRI Segmentation</h1>
+        <p class="lead">Research assistant to Prof. Bing Luo (Assistant Professor of Data &amp; Computational Science) — Kunshan, China.</p>
+      </header>
+      <div class="detail-body">
+        <p><a href="projects/fed-munet/poster.pdf">Zhou, Ruojun, Lisha Qu, Lei Zhang, Ziming Li, Hongwei Yu, and Bing Luo. "Fed-MUNet: Multi-modal Federated Unet for Brain Tumor Segmentation." arXiv:2409.01020 (2024).</a></p>
+
+        <iframe src="projects/fed-munet/poster.pdf" width="100%" height="600"></iframe>
+        <p>Privacy-preserving federated learning (FL) for multi-hospital MRI segmentation. A lightweight U-Net with a Cross-Modality Module (CMM) fuses T1/T1c/T2/FLAIR features; server-side clipped aggregation with calibrated noise stabilizes non-IID clients. On BraTS-style benchmarks, Fed-MUNet approaches centralized performance while keeping data on-prem.</p>
+        <h3>Core ideas</h3>
+        <ul>
+          <li>CMM fusion: transformer-style cross-attention aligns modalities to sharpen ET/TC/WT boundaries.</li>
+          <li>Efficient backbone: depth-wise U-Net blocks balance accuracy and compute.</li>
+          <li>Robust FL: flat-clipping + calibrated noise reduces client drift under heterogeneous data.</li>
+        </ul>
+        <ul>
+          <li>Training paradigm (Fig. 1): Decentralized training paradigm for brain tumor segmentation.</li>
+        </ul>
+        <p><img src="projects/fed-munet/images/fedmunet_paradigm.png" alt="Federated training rounds" title="Client–server FL for MRI segmentation"></p>
+        <ul>
+          <li>Model architecture with CMM (Fig. 2): The framework of our segmentation backbone M-Unet. The right part is the structure of CMM for multi-modal feature integration.</li>
+        </ul>
+        <p><img src="projects/fed-munet/images/munet_cmm_arch.png" alt="Fed-MUNet + CMM" title="U-Net encoder–decoder with cross-modal fusion"></p>
+        <ul>
+          <li>Qualitative results vs. ground truth (Fig. 3): Segmentation overlays highlighting the difference between true labels and inference with σ = 10⁻⁵.</li>
+        </ul>
+        <p><img src="projects/fed-munet/images/brats_samples.png" alt="BraTS samples: prediction vs label" title="ET/TC/WT overlays"></p>
+      </div>
+    </article>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

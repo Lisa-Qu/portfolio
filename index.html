@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vCard - Personal Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    .publication-pane { display: flex; flex-direction: column; gap: 20px; padding: 24px; background: var(--border-gradient-onyx); border-radius: 24px; box-shadow: var(--shadow-2); }
+    .publication-pane__content { flex: 1; color: var(--light-gray); }
+    .publication-pane__label { text-transform: uppercase; letter-spacing: 4px; color: var(--orange-yellow-crayola); font-size: var(--fs-8); margin-bottom: 8px; }
+    .publication-pane__title { color: var(--white-2); margin-bottom: 10px; }
+    .publication-pane__meta { color: var(--light-gray); font-size: var(--fs-8); line-height: 1.6; margin-bottom: 16px; }
+    .publication-pane__poster img { width: 100%; border-radius: 18px; border: 1px solid var(--jet); box-shadow: var(--shadow-2); max-width: 360px; }
+    .publication-pane__abstract { color: var(--gray); line-height: 1.6; margin-bottom: 16px; font-size: var(--fs-7); }
+    @media (max-width: 600px) { .publication-pane { flex-direction: column; } .publication-pane__poster { order: -1; margin-bottom: 16px; } }
+    @media (min-width: 768px) { .publication-pane { flex-direction: row; align-items: flex-start; } .publication-pane__poster { max-width: 320px; } }
+    .publication-card {
+      background: var(--border-gradient-onyx);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: var(--shadow-2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .publication-card::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: inherit;
+      background: var(--bg-gradient-jet);
+      z-index: -1;
+    }
+
+    .publication-card__header {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .publication-card__icon {
+      background: var(--jet);
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: var(--shadow-2);
+    }
+
+    .publication-card__icon img { width: 32px; }
+
+    .publication-card__meta {
+      color: var(--light-gray);
+      font-size: var(--fs-8);
+      line-height: 1.6;
+    }
+
+    .publication-card__links {
+      margin: 16px 0;
+      list-style: disc;
+      padding-left: 1.2rem;
+      color: var(--light-gray);
+    }
+
+    .publication-card__links a { color: var(--orange-yellow-crayola); }
+
+    .publication-card__citation summary {
+      cursor: pointer;
+      color: var(--orange-yellow-crayola);
+      font-size: var(--fs-7);
+    }
+
+    .publication-card__citation pre {
+      font-size: var(--fs-8);
+      white-space: pre-wrap;
+      background: var(--eerie-black-2);
+      border-radius: 10px;
+      padding: 12px;
+      margin-top: 12px;
+      border: 1px solid var(--jet);
+    }
+
+    .publication-card__citation pre code { font-family: inherit; }
+  </style>
+
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./projects/avatar.jpg" alt="Lisha Qu" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Lisha Qu">Lisha Qu</h1>
+
+          <p class="title">Future Security MLE/SDE</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:lisaquuuu@gmail.com" class="contact-link">lisaquuuu@gmail.com</a>
+            </div>
+
+          </li>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="1982-06-23">2004</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Shanghai, China</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/lisha-qu-564358277/" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://github.com/Lisa-Qu" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link="about">About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="resume">Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="portfolio">Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="blog">Blog</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="contact">Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+             I focus on ML security and have explored diverse areas to understand how to secure trained models. 
+             My journey began with a string-vibration simulation that revealed how floating-point errors compromise precision. 
+             To address this, I studied numerical stability and formalized the concepts through numerical analysis. 
+             Later, I explored federated learning to preserve data privacy. Working with Prof. Bing Luo, I developed privacy-preserving brain-tumor segmentation that trains across sites without sharing raw MRIs. 
+             At Duke, I employed Shapley values to interpret model behavior and detect vulnerabilities. 
+             Together, these experiences shaped my pursuit of transparent, privacy-safe, and reliable AI systems.
+          </p>
+
+          <p>
+           I am looking forward to be a MLE/SDE in the future in security domain.
+           Feel free to reach out 😀
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="publication-pane">
+          <div class="publication-pane__content">
+            <div class="publication-pane__label">Publication</div>
+            <h3 class="publication-pane__title">Fed-MUnet: Multi-modal Federated Unet for Brain Tumor Segmentation</h3>
+            <p class="publication-pane__meta">
+              <strong>Authors:</strong> Ruojun Zhou, Lisha Qu, Lei Zhang, Ziming Li, Hongwei Yu, Bing Luo<br>
+              <strong>Venue:</strong> IEEE HealthCom 2024 &mdash; <strong>Publish date:</strong> Feb&nbsp;18,&nbsp;2025 (presented Nov&nbsp;18,&nbsp;2024)
+            </p>
+            <p class="publication-pane__abstract">
+              We propose Fed-MUnet, a multi-modal federated learning framework that securely trains brain-tumor segmentation models across hospitals. A lightweight U-Net with a Cross-Modality Module and clipped/noised aggregation delivers Pareto-efficient accuracy (92.2% WT Dice) while preserving privacy.
+            </p>
+            <p><strong>Tags:</strong> Federated Learning · Brain tumor segmentation · Multi-modality · BraTS2022</p>
+          </div>
+          <div class="publication-pane__poster">
+            <img src="projects/fed-munet/images/fedmunet_paradigm.png" alt="Fed-MUNet overview" />
+            <ul class="publication-card__links">
+              <li><a href="https://ieeexplore.ieee.org/document/10880824" target="_blank" rel="noopener">Publisher: IEEE Xplore</a></li>
+              <li><a href="https://github.com/Arnold-Jun/Fed-MUnet" target="_blank" rel="noopener">Code Repository</a></li>
+              <li><a href="https://www.med.upenn.edu/cbica/brats2022/" target="_blank" rel="noopener">BraTS2022 Dataset</a></li>
+              <li><a href="project-fed-munet.html">Project details &amp; poster</a></li>
+            </ul>
+            <details class="publication-card__citation">
+              <summary>Citation</summary>
+<pre>
+@INPROCEEDINGS{10880824,
+  author={Zhou, Ruojun and Qu, Lisha and Zhang, Lei and Li, Ziming and Yu, Hongwei and Luo, Bing},
+  booktitle={2024 IEEE International Conference on E-health Networking, Application & Services (HealthCom)},
+  title={Fed-MUnet: Multi-modal Federated Unet for Brain Tumor Segmentation},
+  year={2024},
+  pages={1-6},
+  doi={10.1109/HealthCom60970.2024.10880824}}
+</pre>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!--
+        - Testimonials modal placeholder (keeps original JS functionality)
+      -->
+
+      <div class="modal-container" data-modal-container>
+
+        <div class="overlay" data-overlay></div>
+
+        <section class="testimonials-modal">
+
+          <button class="modal-close-btn" data-modal-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+          <div class="modal-img-wrapper">
+            <figure class="modal-avatar-box">
+              <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+            </figure>
+
+            <img src="./assets/images/icon-quote.svg" alt="quote icon">
+          </div>
+
+          <div class="modal-content">
+
+            <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+            <time datetime="2021-06-14">14 June, 2021</time>
+
+            <div data-modal-text>
+              <p>
+                Placeholder modal body to keep the original JS selectors satisfied.
+              </p>
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Duke University</h4>
+
+              <span>2022 — 2026</span>
+
+              <p class="timeline-text">
+                BS Mathematics with track in Computer Science
+                Research Assistant with Prof. Jian Pei on Shapley-based interpretability—uncovered latent sub-phenotypes and built SHAP-space debugging metrics for class-impure regions. CS101 Lab Instructor (Prof. Susan Rodger) and led a multi-agent Jury Deliberation Simulator capstone.  
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Duke Kunshan University</h4>
+
+              <span>2022 — 2026</span>
+
+              <p class="timeline-text">
+                BS Mathematics with track in Computer Science
+                GPA: 3.7/4.0
+                Co-authored “Fed-MUNet” (arXiv:2409.01020) on privacy-preserving brain-tumor segmentation under Prof. Bing Luo
+                Our federated U-Net+Transformer matched centralized baselines within ~5% Dice. 
+                Also modeled nonlinear guqin-string dynamics (PDE/RK4) and served as a CS101 Lab Instructor.  
+                
+                Resisdency Asistant under ResidentLife Coordinator: Yiran Tang
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Internships</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Data Analysis Intern</h4>
+
+              <span>2023 — 2023</span>
+
+              <p class="timeline-text">
+    
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Research</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Multi-modal Federated Unet for Brain Tumor Segmentation (Image Model) at DKU</h4>
+
+              <span>03/2024-08/2024</span>
+
+              <p class="timeline-text"><em>Research Assistant to Professor Bing Luo: Assistant Professor of Data and Computational Science — Kunshan, China</em></p>
+              <ol class="timeline-text">
+                <li>Implemented a federated U-Net + Transformer hybrid enabling multi-institution training on BraTS-style MRI datasets without sharing raw data.</li>
+                <li>Engineered a deterministic FL pipeline featuring Dirichlet non-IID client partitioning, deep supervision, and Dice + CE composite loss, achieving WT/ET/TC Dice within 5% of centralized baselines.</li>
+                <li>Introduced the FlatClip regularizer and Gaussian-noise injection for differential-privacy-style robustness, constraining per-client parameter drift and improving generalization under data heterogeneity.</li>
+                <li>Co-authored “Fed-MUNet: Multi-Modal Federated U-Net for Brain Tumor Segmentation” (arXiv:2409.01020, 2024), demonstrating privacy-preserving segmentation with audit-ready logging and reproducibility protocols.</li>
+              </ol>
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Research on simulating guqin string movement at DKU</h4>
+
+              <span>06/2023-09/2023</span>
+
+              <p class="timeline-text"><em>Research Assistant to Professor Bing Luo：Assistant Professor of Data and Computational Science — Kunshan, China</em></p>
+              <ol class="timeline-text">
+                <li>Implemented a federated U-Net + Transformer hybrid enabling multi-institution training on BraTS-style MRI datasets without sharing raw data.</li>
+                <li>Engineered a deterministic FL pipeline featuring Dirichlet non-IID client partitioning, deep supervision, and Dice + CE composite loss, achieving WT/ET/TC Dice within 5 % of centralized baselines.</li>
+                <li>Introduced the FlatClip regularizer and Gaussian-noise injection for differential-privacy-style robustness, constraining per-client parameter drift and improving generalization under data heterogeneity.</li>
+                <li>Co-authored “Fed-MUNet: Multi-Modal Federated U-Net for Brain Tumor Segmentation” ( arXiv:2409.01020, 2024 ), demonstrating privacy-preserving segmentation with audit-ready logging and reproducibility protocols.</li>
+              </ol>
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Interpreting Machine Learning using Shapley Value at Duke</h4>
+
+              <span>01/2025-Now</span>
+
+              <p class="timeline-text"><em>Research Assistant with Professor Jian Pei: Arthur S. Pearse Distinguished Professor — Durham, US</em></p>
+              <ol class="timeline-text">
+                <li>Discovered latent sub-phenotypes within same-class samples by mapping feature-space clusters to SHAP space, demonstrating that homogeneous data groups often decompose into multiple, behaviorally distinct sub-clusters. </li>
+                <li>Evaluated model capacity effects by comparing high-complexity (HC) and low-capacity (LC) classifiers, showing that HC models generate richer SHAP-space structures, revealing nuanced decision rationales.</li>
+                <li>Designed SHAP-space debugging metrics to identify class-impure regions—areas inconsistent between feature and SIV spaces—and empirically linked them to lower local prediction accuracy, providing a practical interpretability diagnostic.</li>
+              </ol>
+              </p>
+
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Machine Learning</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Large Language Model</h5>
+                <data value="70">70%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Shapely Value</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Data Crawler</h5>
+                <data value="60">60%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 60%;"></div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Machine Learning</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>IOS Application Design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Data Crawler</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Machine Learning</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>IOS Application Design</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Data Crawler</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <!-- /content/projects/AI_Jury/index.md -->
+            <li class="project-item active" data-filter-item data-category="Machine Learning">
+              <a href="project-ai-jury.html">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="projects/ai_jury/featured.png" alt="Jury Deliberation Simulator" loading="lazy">
+                </figure>
+                <h3 class="project-title">Jury Deliberation Simulator</h3>
+                <p class="project-category">This project presents a Jury Deliberation Simulator, an interactive AI-driven environment designed to study group reasoning, persuasion, and decision-making in a courtroom-like setting.</p>
+              </a>
+            </li>
+
+            <!-- /content/projects/Black_Myth/index.md -->
+            <li class="project-item active" data-filter-item data-category="Data Crawler">
+              <a href="project-black-myth.html">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="projects/black_myth/featured.png" alt="Social Media Sentiment Analysis Project" loading="lazy">
+                </figure>
+                <h3 class="project-title">Social Media Sentiment Analysis Project</h3>
+                <p class="project-category">This project builds an end-to-end pipeline to analyze public sentiment on Chinese social media posts using an English sentiment model.</p>
+              </a>
+            </li>
+
+            <!-- /content/projects/Fed-MUnet/index.md -->
+            <li class="project-item active" data-filter-item data-category="Machine Learning">
+              <a href="project-fed-munet.html">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="projects/fed-munet/images/fedmunet_paradigm.png" alt="Fed-MUnet: Multi-modal Federated U-Net for Brain Tumor Segmentation at DKU" loading="lazy">
+                </figure>
+                <h3 class="project-title">Fed-MUnet: Multi-modal Federated U-Net for Brain Tumor Segmentation at DKU</h3>
+                <p class="project-category">Privacy-preserving federated learning (FL) for multi-hospital MRI segmentation. A lightweight U-Net with a Cross-Modality Module (CMM) fuses T1/T1c/T2/FLAIR features; server-side clipped aggregation with calibrated noise stabilizes non-IID clients. On BraTS-style benchmarks, Fed-MUnet approaches centralized performance while keeping data on-prem.</p>
+              </a>
+            </li>
+
+            <!-- /content/projects/IOS/index.md -->
+            <li class="project-item active" data-filter-item data-category="IOS Application Design">
+              <a href="project-youare.html">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="projects/ios/featured.png" alt="🧠 YouAre — iOS App for Building Self-Assertion and Confidence" loading="lazy">
+                </figure>
+                <h3 class="project-title">🧠 YouAre — iOS App for Building Self-Assertion and Confidence</h3>
+                <p class="project-category">This app is designed to help people improve self-assertion.</p>
+              </a>
+            </li>
+
+
+            <!-- /content/projects/Shapley/index.md -->
+            <li class="project-item active" data-filter-item data-category="Machine Learning">
+              <a href="project-shapley.html">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="projects/Shapely-value/featured.png" alt="Investigation of the Relationship between Shapley Values and Clustering Structures" loading="lazy">
+                </figure>
+                <h3 class="project-title">🧠 Investigation of the Relationship between Shapley Values and Clustering Structures</h3>
+                <p class="project-category">This analysis is ongoing. Preliminary results are summarized below. The full poster is available</p>
+              </a>
+            </li>
+
+
+            <li class="project-item  active" data-filter-item data-category="All">
+              <a href="project-guqin.html">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="projects/Guqin/featured.png" alt="arrival" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Research on simulating guqin string movement at DKU</h3>
+
+                <p class="project-category">Formulated and solved a nonlinear wave PDE with fourth-order bending stiffness and viscoelastic damping, discretized via finite-difference stencils and integrated using Runge–Kutta (RK4). Built a C + Python hybrid solver with FFT-based spectral analysis and Lyapunov-exponent estimation, quantifying the onset of chaos in plucked-string motion.</p>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+      <!--
+        - #BLOG
+      -->
+
+      <article class="blog" data-page="blog">
+
+        <header>
+          <h2 class="h2 article-title">Blog</h2>
+        </header>
+
+        <section class="blog-posts">
+
+          <ul class="blog-posts-list">
+
+            <!-- /content/blog/Cooking/index.md -->
+            <li class="blog-post-item">
+              <a href="blog-cooking.html">
+                <figure class="blog-banner-box">
+                  <img src="projects/Cooking/featured.jpg" alt="My Cooking Journey" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Blog</p>
+                    <span class="dot"></span>
+                    <time datetime="2024-07-10">Jul 10, 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">My Cooking Journey</h3>
+                  <p class="blog-text">
+                    From learning to cook out of necessity to finding joy and friendship in the kitchen. A story of self-teaching, making friends, and the meditative process of cooking.
+                  </p>
+                </div>
+              </a>
+            </li>
+
+            <!-- /content/blog/Running/index.md -->
+            <li class="blog-post-item">
+              <a href="blog-running.html">
+                <figure class="blog-banner-box">
+                  <img src="projects/Running/images/trx2.jpg" alt="🏃‍♀️ My Identity as a Runner" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Blog</p>
+                    <span class="dot"></span>
+                    <time datetime="2024-07-09">Jul 9, 2024</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">🏃‍♀️ My Identity as a Runner</h3>
+                  <p class="blog-text">
+                    From a junior school champion in Shanghai to training with the coach of an Olympic gold medalist, running has taught me about courage, technique, and balance. Here is my story.
+                  </p>
+                </div>
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
